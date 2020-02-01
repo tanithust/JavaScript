@@ -12,13 +12,18 @@
         car[3]={ type:"BMW", year:2016}<br>
         Sorting this array by:<br>
         <button onclick="byType()">By type</button>
-        <p id="byType"></p>
         <button onclick="byYear()">By year</button>
-        <p id="byYear"></p>
+        <button onclick="print()">Print array</button>
+        <p id="print"></p>
         <script>
             var cars=[{type:"Volvo" , year:2010},{type:"Mercedes" , year:2001},{type:"BMW", year:2016}];
             function byType(){
                 cars.sort(function(a,b){return b.type-a.type;});
+            }
+            function byYear(){
+                cars.sort(function(a,b){return b.year-a.year;});
+            }
+            function print(){
                 var text="<table> <tr><th scope=\"col\">Type</th> <th scope=\"col\">Year</th></tr>";
                 var len=cars.length;
                 while(len--)
@@ -26,18 +31,7 @@
                     text+="<tr><td>"+cars[len].type+"</td>"+"<td>"+cars[len].year+"</td> </tr>";
                 }
                 text+="</table>";
-                document.getElementById("byType").innerHTML=text;
-            }
-            function byYear(){
-                cars.sort(function(a,b){return b.year-a.year;});
-                var byYear="<table> <tr><th scope=\"col\">Type</th> <th scope=\"col\">Year</th></tr>";
-                var len=cars.length;
-                while(len--)
-                {
-                    byYear+="<tr><td>"+cars[len].type+"</td>"+"<td>"+cars[len].year+"</td> </tr>";
-                }
-                byYear+="</table>";
-                document.getElementById("byYear").innerHTML=byYear;
+                document.getElementById("print").innerHTML=text;
             }
         </script>
     </body>
