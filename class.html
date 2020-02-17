@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS classes</title>
+</head>
+
+<body>
+    Some example of JS classes :
+    <p id="demo"></p>
+    <script>
+        class student {
+            constructor(id, date, name) {
+                this.birthday = date,
+                    this.id = id,
+                    this.name = name;
+            }
+        }
+        PXT = new student("20194833", "12/02/2001", "Phan Xuan Tan");
+        document.getElementById("demo").innerHTML = "This is " + PXT.name + "<br> ID: " + PXT.id + "<br> Birthday: " + PXT.birthday;
+    </script>
+</body>
+
+</html>
